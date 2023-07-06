@@ -1,6 +1,7 @@
 "use client"
 import React, {useState} from 'react'
 import { motion } from "framer-motion"
+import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store/store'
 import LaptopCanvas from "./canvas/Laptop"
@@ -29,25 +30,25 @@ const Hero = () => {
               And welcome to my website
             </p>
             <div className="flex flex-row gap-8 mt-4">
-              <a href="/project">
+              <Link href="/project">
                 <button
                 className="mb-2 flex flex-row items-center justify-center gap-2 rounded bg-button-gradien px-6 py-2.5 
                 text-xs font-medium uppercase leading-tight text-white shadow-white 
-                transition duration-150 ease-in-out active:bg-primary-800 active:shadow-lg">
+                transition duration-150 ease-in-out active:bg-primary-800 active:shadow-lg hover:scale-125">
                   <p>My Project</p>
                 </button>
-              </a>
-              <a href="/blog">
+              </Link>
+              <Link href="/blog">
                 <button
-                className={`mb-2 flex flex-row items-center justify-center gap-2 rounded ${darkMode?'bg-black-100 shadow-white':'bg-white-100 shadow-black'} px-6 py-2.5 
+                className={`mb-2 flex flex-row items-center justify-center gap-2 rounded ${darkMode?'bg-black-100':'bg-white-100'} px-6 py-2.5 
                 text-xs font-medium uppercase leading-tight text-secondary border-2 border-secondary
-                transition duration-150 ease-in-out active:bg-primary-800 active:shadow-lg`}>
+                transition duration-150 ease-in-out active:bg-primary-800 active:shadow-lg hover:scale-125`}>
                   <p>Blog</p>
                 </button>
-              </a>
+              </Link>
             </div>
             <div className="mt-4">
-              <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1aacd3HOVgNqlob7UJqMYHIKEfghLDEid/view?usp=drive_link" className="cursor-pointer text-primary hover:text-tertiary">Download My CV</a>
+              <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1aacd3HOVgNqlob7UJqMYHIKEfghLDEid/view?usp=drive_link" className="cursor-pointer text-primary hover:text-tertiary hover:scale-105">Download My CV</a>
             </div>
         </div>
       </div>

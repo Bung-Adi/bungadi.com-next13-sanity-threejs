@@ -7,6 +7,7 @@ import ToolSkill from '@/components/ToolSkill'
 import Feedback from '@/components/Feedback'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store/store'
+import Blank from '@/components/Blank'
 
 export const metadata = {
   title: "Who is 'Adi' Muhammad Aziz Abdillah",
@@ -19,6 +20,7 @@ export default function AboutPage() {
         <About/>
         <Exp/>
         <ToolSkill/>
+        <Blank/>
     </div>
   )
 }

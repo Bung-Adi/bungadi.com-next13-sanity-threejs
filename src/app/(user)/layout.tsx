@@ -1,4 +1,4 @@
-import { DefaultProviders } from '@/redux/provider'
+import { DefaultProviders } from '@/redux/Provider'
 import '../globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://bungadi.com' || 'localhost:3000'),
   title: {
     default: "bungadi.com",
     template: "%s | bungadi.com",
@@ -26,7 +27,7 @@ export const metadata = {
         url: '/preview.jpg',
         width: 1800,
         height: 1600,
-        alt: 'My custom alt',
+        alt: 'preview',
       },
     ],
     type: 'website',

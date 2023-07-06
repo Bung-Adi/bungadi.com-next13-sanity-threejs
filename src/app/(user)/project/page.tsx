@@ -10,6 +10,7 @@ import Project from '@/components/Project'
 import Feedback from '@/components/Feedback'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store/store'
+import Blank from '@/components/Blank'
 
 export const metadata = {
   title: "What Projects 'Adi' Muhammad Aziz Abdillah ever contribute",
@@ -20,6 +21,7 @@ export default function ProjectPage() {
   return (
     <div className={`relative z-0 ${darkMode ? 'bg-black-100' : 'bg-white-100'}`}>
         <Project/>
+        <Blank/>
     </div>
   )
 }

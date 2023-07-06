@@ -2,7 +2,6 @@ import { configureStore } from "@reduxjs/toolkit"
 import {persistReducer,FLUSH,REHYDRATE,PAUSE,PERSIST,PURGE,REGISTER} from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import darkModeSlice from "../slices/darkModeSlice"
-import navigationSlice from "../slices/whatPageSlice"
 
 const persistConfig = {
     key: "root",
@@ -13,7 +12,6 @@ export function makeStore() {
     return configureStore({
         reducer: {
             darkMode: persistReducer(persistConfig, darkModeSlice),
-            navigation: persistReducer(persistConfig, navigationSlice)
         },
         middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

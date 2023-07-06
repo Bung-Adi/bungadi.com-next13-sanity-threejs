@@ -1,11 +1,11 @@
 "use client"
 import React, {useEffect,useState} from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useSelector,useDispatch } from 'react-redux'
 import { AppDispatch, RootState } from '@/redux/store/store'
 import { toggleDarkMode } from '@/redux/slices/darkModeSlice'
-import { setCurrentPage } from '@/redux/slices/whatPageSlice'
 import { BsMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { navLinks } from '@/utils/constants'
 import LogoCanvas from './canvas/Logo'
@@ -16,7 +16,7 @@ const close = '/assets/close.svg'
 const Navbar = () => {
   const [toggle, setToggle] = useState(true)
   const {darkMode} = useSelector((state: RootState) => state.darkMode)
-  const currentPage = useSelector((state: RootState) => state.currentPage)
+  const pathname = usePathname()
   const dispatch = useDispatch<AppDispatch>()
 
   useEffect(() => {
@@ -57,16 +57,16 @@ const Navbar = () => {
 
         {/* Nav Link */}
         <ul className='relative list-none flex flex-col gap-2'>
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}  
-              className={`${
-                currentPage === nav.title ? "text-primary" : `${darkMode ? "text-white-100" : "text-black-100"}`
-              } hover:text-secondary hover:scale-105 text-[18px] font-medium cursor-pointer`}
-            >
-                <a href={`/${nav.id}`} onClick={() => dispatch(setCurrentPage(`${nav.title}`))}>{nav.title}</a>
-            </li>
-          ))}
+          {navLinks.map((nav) => {
+            const isActive = pathname.startsWith(nav.id)
+            return (
+              <Link key={nav.id} href={`/${nav.id}`} className={`${
+                isActive ? "text-primary" : `${darkMode ? "text-white-100" : "text-black-100"}`} 
+                hover:text-secondary hover:scale-105 text-[18px] font-medium cursor-pointer`}>
+                  {nav.title}
+              </Link>
+            )
+          })}
         </ul>
 
         {/* togle dark ligt button */}

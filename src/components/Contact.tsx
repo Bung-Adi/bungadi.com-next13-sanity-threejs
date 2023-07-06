@@ -142,7 +142,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:max-h-[550px] max-h-screen'
+        className='xl:flex-1 xl:h-auto md:min-h-[450px] md:max-h-[550px] max-h-screen'
       >
         <LogoBigCanvas />
         
