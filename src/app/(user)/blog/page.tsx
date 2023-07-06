@@ -7,7 +7,7 @@ import BlogList from "@/components/blog/BlogList";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Blog list",
+  title: "Blog",
 }
 
 export const revalidate = 60

@@ -9,10 +9,6 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store/store'
 import Blank from '@/components/Blank'
 
-export const metadata = {
-  title: "Who is 'Adi' Muhammad Aziz Abdillah",
-}
-
 export default function AboutPage() {
   const {darkMode} = useSelector((state: RootState) => state.darkMode)
   return (

@@ -13,10 +13,6 @@ import StarsCanvas from '@/components/canvas/Stars'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store/store'
 
-export const metadata = {
-  title: "Contact 'Adi' Muhammad Aziz Abdillah",
-}
-
 export default function ContactPage() {
   const {darkMode} = useSelector((state: RootState) => state.darkMode)
   return (
