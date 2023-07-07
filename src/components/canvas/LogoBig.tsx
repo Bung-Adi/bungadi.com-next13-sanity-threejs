@@ -6,13 +6,13 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Sta = () => {
-  const earth = useGLTF("./bungadi3d/logo.gltf")
+  const earth = useGLTF("./bungadi3d/laptop.gltf")
 
   return (
     <mesh castShadow receiveShadow>
       <ambientLight intensity={0.25} />
-      <directionalLight position={[0, 0, 0.05]} />
-      <primitive object={earth.scene} scale={2.5} position-y={-3} rotation-y={0} />
+      {/* <directionalLight position={[0, 0, 0.05]} /> */}
+      <primitive object={earth.scene} scale={2.5} position={[0,-3,0]} rotation-y={0} />
     </mesh>
   );
 };
@@ -39,7 +39,6 @@ const LogoBigCanvas = () => {
           minPolarAngle={Math.PI / 2}
         />
         <Sta />
-
         <Preload all />
       </Suspense>
     </Canvas>

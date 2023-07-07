@@ -7,15 +7,15 @@ import { random } from 'maath'
 type StarsProps = {
     [key: string]: any
 }
-let width:number
-let height:number
+// let width:number
+// let height:number
 
 const Stars = (props: StarsProps) => {
     const ref = useRef<THREE.Points>(null)
-    // const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));
-    const sphere = new Float32Array(random.inSphere(new Float32Array(5000), { radius: 1.2 }));
-    const numPoints = Number((width * height) / 2);
-    const positions = new Float32Array(numPoints * 3);
+    const [sphere] = useState(() => new Float32Array( random.inSphere(new Float32Array(5000), { radius: 1.2 })));
+    // const sphere = new Float32Array(random.inSphere(new Float32Array(5000), { radius: 1.2 }));
+    // const numPoints = Number((width * height) / 2);
+    // const positions = new Float32Array(numPoints * 3);
     useFrame((state, delta) => {
         if (ref.current) {
             (ref.current as THREE.Object3D).rotation.x -= delta / 10;

@@ -4,11 +4,10 @@ import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/redux/store/store'
-import { styles } from '@/utils/styles'
 import SectionWrapper from '../hoc/SectionWrapper'
 import { slideIn } from '../utils/motion'
-import LogoBigCanvas from './canvas/LogoBig'
 import MySocialLink from './MySocialLink'
+import LaptopCanvas from './canvas/Laptop'
 
 const Contact = () => {
 
@@ -144,7 +143,9 @@ const Contact = () => {
         variants={slideIn("right", "tween", 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:min-h-[450px] md:max-h-[550px] max-h-screen'
       >
-        <LogoBigCanvas />
+        <motion.div className='h-full w-full'>
+          <LaptopCanvas/>
+        </motion.div>
         
         <div className='xl:hidden absolute xs:bottom-8 bottom-16 w-full flex justify-center items-center'>
           <a href='#contact-form'>

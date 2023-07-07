@@ -60,7 +60,7 @@ const Navbar = () => {
           {navLinks.map((nav) => {
             const isActive = pathname.startsWith(nav.id)
             return (
-              <Link key={nav.id} href={`/${nav.id}`} className={`${
+              <Link key={nav.title} href={`/${nav.id}`} className={`${
                 isActive ? "text-primary" : `${darkMode ? "text-white-100" : "text-black-100"}`} 
                 hover:text-secondary hover:scale-105 text-[18px] font-medium cursor-pointer`}>
                   {nav.title}
